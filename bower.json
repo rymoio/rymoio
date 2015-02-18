@@ -1,0 +1,25 @@
+{
+  "name": "rymo.io",
+  "version": "1.0.0",
+  "homepage": "https://rymo.io",
+  "authors": [
+    "Ryan Morrissey <me@rymo.io>"
+  ],
+  "description": "Personal landing page of Ryan Morrissey.",
+  "license": "GNU GPL v2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/_lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "octicons": "~2.1.2",
+    "flat-colors": "*",
+    "animate-sass": "~0.6.2",
+    "bootstrap-sass": "~3.3.3"
+  }
+}
