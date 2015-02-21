@@ -33,23 +33,6 @@ var assets = 'assets/',
         ''
     ].join('\n');
 
-// Task :: Javascript
-gulp.task('javascript', function() {
-    var jsFiles = [
-        'src/_lib/jquery/dist/jquery.js',
-        'src/_dev/js/main.js'
-    ];
-    var filename = 'main.min.js';
-
-    return gulp.src(jsFiles)
-        .pipe(plugins.jshint())
-        .pipe(plugins.uglify())
-        .pipe(plugins.concat(filename))
-        .pipe(plugins.header(banner, {pkg: pkg, f: filename}))
-        .pipe(gulp.dest(assets + 'js'))
-        .on('error', plugins.util.log);
-});
-
 // Task :: Sass
 gulp.task('sass',function() {
     var sassFiles = [
@@ -59,9 +42,7 @@ gulp.task('sass',function() {
 
     return plugins.sass(sassFiles, {
             precision: 8,
-            verbose: true,
-            trace: true,
-            loadPath: "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap"
+            verbose: true
         })
         .on('error', function (err) {
             console.error('Error!', err.message);
@@ -72,14 +53,13 @@ gulp.task('sass',function() {
         .pipe(plugins.css())
         .pipe(plugins.concat(filename))
         .pipe(plugins.header(banner, {pkg: pkg, f: filename}))
-        .pipe(gulp.dest(assets + 'css'))
-        .on('error', plugins.util.log);
+        .pipe(gulp.dest(assets + 'css'));
 });
 
 // Task :: Images
 gulp.task('images', function () {
     var imgFiles = [
-        'src/_dev/img/*'
+        'src/_dev/img/snowy_portrait.png'
     ];
     return gulp.src(imgFiles)
         .pipe(plugins.imagemin({
@@ -94,10 +74,11 @@ gulp.task('images', function () {
 // Task :: Fonts
 gulp.task('fonts', function() {
     var fontFiles = [
-        'src/_lib/octicons/octicons/octicons.eot',
-        'src/_lib/octicons/octicons/octicons.svg',
-        'src/_lib/octicons/octicons/octicons.ttf',
-        'src/_lib/octicons/octicons/octicons.woff'
+        'src/_lib/fontawesome/fonts/fontawesome-webfont.eot',
+        'src/_lib/fontawesome/fonts/fontawesome-webfont.svg',
+        'src/_lib/fontawesome/fonts/fontawesome-webfont.ttf',
+        'src/_lib/fontawesome/fonts/fontawesome-webfont.woff',
+        'src/_lib/fontawesome/fonts/fontawesome-webfont.woff2',
     ];
 
     return gulp.src(fontFiles)
@@ -106,10 +87,9 @@ gulp.task('fonts', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(['src/_dev/js/*.js'], ['javascript']);
     gulp.watch(['src/_dev/scss/*.scss'], ['sass']);
     gulp.watch(['src/_dev/img/*'], ['images']);
 });
 
 // Task :: Default
-gulp.task('default', ['watch', 'javascript', 'sass', 'images', 'fonts']);
+gulp.task('default', ['watch', 'sass', 'images', 'fonts']);

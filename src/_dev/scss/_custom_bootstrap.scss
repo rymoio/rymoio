@@ -1,53 +1,22 @@
 // Core variables and mixins
-@import "variables";
-// Custom variable overrides
-@import "custom_variables";
-
-@import "mixins";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
-@import "normalize";
-@import "print";
-// @import "glyphicons";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 
 // Core CSS
-@import "scaffolding";
-@import "type";
-// @import "code";
-@import "grid";
-// @import "tables";
-// @import "forms";
-@import "buttons";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
-@import "component-animations";
-// @import "dropdowns";
-// @import "button-groups";
-// @import "input-groups";
-@import "navs";
-@import "navbar";
-// @import "breadcrumbs";
-// @import "pagination";
-// @import "pager";
-@import "labels";
-@import "badges";
-@import "jumbotron";
-// @import "thumbnails";
-// @import "alerts";
-// @import "progress-bars";
-// @import "media";
-@import "list-group";
-@import "panels";
-@import "responsive-embed";
-// @import "wells";
-@import "close";
-
-// Components w/ JavaScript
-// @import "modals";
-// @import "tooltip";
-// @import "popovers";
-@import "carousel";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
 
 // Utility classes
-@import "utilities";
-@import "responsive-utilities";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "../../_lib/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
