@@ -13,11 +13,18 @@ body {
 
 body {
 	background-color: $flat-wet-asphalt;
-	background: url(../img/snowy_portrait.png) no-repeat center center fixed;
-	background-size: cover;
 	color: $flat-clouds;
 	text-align: center;
 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+	&.snowman {
+		background: url(../img/snowman.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}
+	&.snowbarn {
+		background: url(../img/snowbarn.jpg) no-repeat center center fixed;
+		background-size: cover;
+	}
 }
 
 ::selection {
@@ -110,29 +117,6 @@ body {
 	}
 }
 
-.social {
-	li {
-		font-size: 36px;
-
-		a {
-			color: $flat-clouds;
-
-			&:hover,
-			&:focus {
-				&.google {
-					@include color-opacity($flat-alizarin, .9);
-				}
-				&.github {
-					@include color-opacity($flat-midnight-blue, .9);
-				}
-				&.linkedin {
-					@include color-opacity($flat-belize-hole, .9);
-				}
-			}
-		}
-	}
-}
-
 /* Footer
 -------------------------------------------------- */
 .footer {
@@ -140,35 +124,43 @@ body {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 60px;
+	height: 100px;
 	padding-top: 20px;
-	text-shadow: none;
-	// @include background-opacity($flat-clouds);
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
 
 	p {
 		color: $flat-clouds;
+	}
+
+	.social {
+		li {
+			font-size: 24px;
+
+			a {
+				color: $flat-clouds;
+
+				&:hover,
+				&:focus {
+					&.google {
+						@include color-opacity($flat-alizarin, .7);
+					}
+					&.linkedin {
+						@include color-opacity($flat-belize-hole, .7);
+					}
+					&.github {
+						@include color-opacity($flat-midnight-blue, .7);
+					}
+					&.email {
+						@include color-opacity($flat-sunflower, .7);
+					}
+				}
+			}
+		}
 	}
 }
 
 /* Affix and center
 -------------------------------------------------- */
-@media (max-width: 480px) {
-	.cover {
-		position: fixed;
-		bottom: 50px;
-	}
-}
-
-@media (min-width: 480px) {
-	.masthead {
-		position: fixed;
-		top: 0;
-	}
-	.site-wrapper-inner {
-		vertical-align: middle;
-	}
-}
-
 @media (min-width: 768px) {
 	/* Pull out the header and footer */
 	.masthead {

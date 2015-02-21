@@ -8,7 +8,8 @@ var plugins = require("gulp-load-plugins")({
     replaceString: /\bgulp[\-.]/g,
     rename: {
         'gulp-minify-css': 'css',
-        'gulp-ruby-sass': 'sass'
+        'gulp-ruby-sass': 'sass',
+        'gulp-image-resize': 'resize'
     }
 });
 
@@ -50,7 +51,9 @@ gulp.task('sass',function() {
         .pipe(plugins.autoprefixer({
             browsers: ['last 2 versions']
         }))
-        .pipe(plugins.css())
+        .pipe(plugins.css({
+            keepSpecialComments: 0
+        }))
         .pipe(plugins.concat(filename))
         .pipe(plugins.header(banner, {pkg: pkg, f: filename}))
         .pipe(gulp.dest(assets + 'css'));
@@ -59,9 +62,13 @@ gulp.task('sass',function() {
 // Task :: Images
 gulp.task('images', function () {
     var imgFiles = [
-        'src/_dev/img/snowy_portrait.png'
+        'src/_dev/img/snowman.jpg',
+        'src/_dev/img/snowbarn.jpg'
     ];
     return gulp.src(imgFiles)
+        .pipe(plugins.resize({
+            width : 1920
+        }))
         .pipe(plugins.imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],

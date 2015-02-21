@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# v1.0.0
+
+# stylesheets
+//assets/css/main.min.css
+
+# fonts
+//assets/fonts/fontawesome-webfont.ttf
+
+# images
+//assets/img/snowman.jpg
+//assets/img/snowbarn.jpg
+
+NETWORK:
+*
