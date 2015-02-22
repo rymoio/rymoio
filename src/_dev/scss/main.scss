@@ -1,8 +1,8 @@
 // Import other Sass files
-@import "../../_lib/flat-colors/flat-colors.scss";
-@import "custom_variables.scss";
-@import "custom_bootstrap.scss";
-@import "../../_lib/fontawesome/scss/font-awesome.scss";
+@import "../../_lib/flat-colors/flat-colors";
+@import "custom_variables";
+@import "custom_bootstrap";
+@import "../../_lib/fontawesome/scss/font-awesome";
 
 /* Main
 -------------------------------------------------- */
@@ -114,6 +114,10 @@ body {
 	&.btn-lg {
 		padding: 10px 20px;
 		font-weight: bold;
+	}
+
+	.cover-subheading i {
+		color: $flat-alizarin;
 	}
 }
 

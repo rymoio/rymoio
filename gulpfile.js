@@ -62,8 +62,7 @@ gulp.task('sass',function() {
 // Task :: Images
 gulp.task('images', function () {
     var imgFiles = [
-        'src/_dev/img/snowman.jpg',
-        'src/_dev/img/snowbarn.jpg'
+        'src/_dev/img/*.jpg'
     ];
     return gulp.src(imgFiles)
         .pipe(plugins.resize({
@@ -98,5 +97,7 @@ gulp.task('watch', function() {
     gulp.watch(['src/_dev/img/*'], ['images']);
 });
 
-// Task :: Default
-gulp.task('default', ['watch', 'sass', 'images', 'fonts']);
+// Task :: Serve
+gulp.task('serve', ['watch', 'sass', 'images', 'fonts']);
+// Task :: Build
+gulp.task('build', ['sass', 'images', 'fonts']);
