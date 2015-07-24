@@ -4,6 +4,9 @@
 // Typography
 $font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+// Font Path
+$fa-font-path: "/assets/fonts";
+
 // Mixins
 @mixin background-opacity($color, $opacity: 0.3) {
     background: $color; /* The Fallback */

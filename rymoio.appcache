@@ -1,15 +1,16 @@
 CACHE MANIFEST
-# v1.1.0
+# v1.2.0
 
 # stylesheets
-//assets/css/main.min.css
+/assets/css/main.min.css
 
 # fonts
-//assets/fonts/fontawesome-webfont.ttf
+/assets/fonts/fontawesome-webfont.ttf
+/assets/fonts/sanfranciscotext-regular-webfont.ttf
 
 # images
-//assets/img/snowman.jpg
-//assets/img/snowbarn.jpg
+/assets/img/snowman.jpg
+/assets/img/map.jpg
 
 NETWORK:
 *

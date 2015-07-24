@@ -62,11 +62,13 @@ gulp.task('sass',function() {
 // Task :: Images
 gulp.task('images', function () {
     var imgFiles = [
-        'src/_dev/img/*.jpg'
+        'src/_dev/img/*.jpg',
+        'src/_dev/img/*.png'
     ];
     return gulp.src(imgFiles)
         .pipe(plugins.resize({
-            width : 1920
+            width : 1920,
+            format: 'jpg'
         }))
         .pipe(plugins.imagemin({
             progressive: true,
@@ -85,6 +87,12 @@ gulp.task('fonts', function() {
         'src/_lib/fontawesome/fonts/fontawesome-webfont.ttf',
         'src/_lib/fontawesome/fonts/fontawesome-webfont.woff',
         'src/_lib/fontawesome/fonts/fontawesome-webfont.woff2',
+
+        'src/_lib/sanfrancisco-font/sanfranciscotext-regular-webfont.eot',
+        'src/_lib/sanfrancisco-font/sanfranciscotext-regular-webfont.svg',
+        'src/_lib/sanfrancisco-font/sanfranciscotext-regular-webfont.ttf',
+        'src/_lib/sanfrancisco-font/sanfranciscotext-regular-webfont.woff',
+        'src/_lib/sanfrancisco-font/sanfranciscotext-regular-webfont.woff2'
     ];
 
     return gulp.src(fontFiles)
@@ -94,10 +102,9 @@ gulp.task('fonts', function() {
 // Rerun the task when a file changes
 gulp.task('watch', function() {
     gulp.watch(['src/_dev/scss/*.scss'], ['sass']);
-    gulp.watch(['src/_dev/img/*'], ['images']);
 });
 
 // Task :: Serve
-gulp.task('serve', ['watch', 'sass', 'images', 'fonts']);
+gulp.task('serve', ['watch', 'sass']);
 // Task :: Build
 gulp.task('build', ['sass', 'images', 'fonts']);

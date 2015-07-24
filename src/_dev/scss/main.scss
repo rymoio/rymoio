@@ -2,6 +2,7 @@
 @import "../../_lib/flat-colors/flat-colors";
 @import "custom_variables";
 @import "custom_bootstrap";
+@import "sanfrancisco";
 @import "../../_lib/fontawesome/scss/font-awesome";
 
 /* Main
@@ -12,6 +13,7 @@ body {
 }
 
 body {
+	font-family: "San Francisco Text", sans-serif;
 	background-color: $flat-wet-asphalt;
 	color: $flat-clouds;
 	text-align: center;
@@ -24,6 +26,70 @@ body {
 	&.snowbarn {
 		background: url(../img/snowbarn.jpg) no-repeat center center fixed;
 		background-size: cover;
+	}
+	&.map {
+		background: url(../img/map.jpg) no-repeat center center fixed;
+		background-size: cover;
+		text-shadow: none;
+
+		$map-color: $flat-belize-hole;
+		$map-accent: $flat-nephritis;
+
+		.masthead-brand {
+			color: $map-color;
+			font-size: 28px;
+		}
+		.masthead-nav li {
+			a {
+				font-size: 18px;
+				@include color-opacity($map-color, .75);
+
+				&:hover,
+				&:focus {
+					color: $map-color;
+					border-bottom-color: $map-color;
+				}
+			}
+
+			&.active {
+				a,
+				a:hover,
+				a:focus {
+					color: $map-accent;
+					border-bottom-color: $map-accent;
+				}
+			}
+		}
+		
+		&:before {
+			content: '';
+			position: absolute;
+			overflow:hidden;
+		    z-index: -1;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image: linear-gradient(
+			    to bottom,
+			    rgba(255, 255, 255, 1) 0%,
+			    rgba(255, 255, 255, 0) 30%,
+			    rgba(255, 255, 255, 0) 50%,
+			    rgba(255, 255, 255, 1) 100%
+			);
+		}
+
+		.cover {
+			color: $map-color;
+		}
+
+		.footer {
+			padding-top: 30px;
+			p {
+				color: $flat-asbestos;
+				text-shadow: none;
+			}
+		}
 	}
 }
 
@@ -109,7 +175,10 @@ body {
 /* Cover
 -------------------------------------------------- */
 .cover {
-	padding: 0 20px;
+	// padding: 0 20px;
+	bottom: 30px;
+	left: 0px;
+	position: absolute;
 
 	&.btn-lg {
 		padding: 10px 20px;
@@ -187,4 +256,13 @@ body {
 	.cover-container {
 		width: 700px;
 	}
+}
+
+/* Map
+-------------------------------------------------- */
+#map {
+	position:absolute;
+	top:0;
+	bottom:0;
+	width:100%;
 }

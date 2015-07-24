@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'San Francisco Text';
+  src: url('#{$fa-font-path}/sanfranciscotext-regular-webfont.eot');
+  src: url('#{$fa-font-path}/sanfranciscotext-regular-webfont.eotversion}') format('embedded-opentype'),
+    url('#{$fa-font-path}/sanfranciscotext-regular-webfont.wofversion}') format('woff2'),
+    url('#{$fa-font-path}/sanfranciscotext-regular-webfont.wofversion}') format('woff'),
+    url('#{$fa-font-path}/sanfranciscotext-regular-webfont.ttf') format('truetype'),
+    url('#{$fa-font-path}/sanfranciscotext-regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
